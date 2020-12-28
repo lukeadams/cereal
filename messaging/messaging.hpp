@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <capnp/serialize.h>
-#include "../gen/cpp/log.capnp.h"
+#include "log.capnp.h"
 
 #ifdef __APPLE__
 #define CLOCK_BOOTTIME CLOCK_MONOTONIC

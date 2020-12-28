@@ -9,11 +9,14 @@ target_link_libraries(cereal-objects PRIVATE CapnProto::capnp)
 target_include_directories(cereal-objects PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
 # Generate service header
-# TODO: make this into an actual target to enable propagation of the include dir
 add_custom_command(OUTPUT services.h
     DEPENDS services.py service_list.yaml
     COMMAND python3 "${CMAKE_CURRENT_SOURCE_DIR}/services.py" > "services.h"
     WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 )
+add_custom_target(cereal-services-file DEPENDS services.h) # target which depends on the command output above
+add_library(cereal-services INTERFACE) # header only library
+add_dependencies(cereal-services cereal-services-file) # Depend on the file target
+target_include_directories(cereal-services INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(messaging)

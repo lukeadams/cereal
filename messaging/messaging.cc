@@ -1,6 +1,6 @@
-#include "messaging.hpp"
-#include "impl_zmq.hpp"
-#include "impl_msgq.hpp"
+#include "cereal/messaging/messaging.hpp"
+#include "cereal/messaging/impl_zmq.hpp"
+#include "cereal/messaging/impl_msgq.hpp"
 
 #ifdef __APPLE__
 const bool MUST_USE_ZMQ = true;

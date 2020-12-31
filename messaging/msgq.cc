@@ -21,7 +21,9 @@
 
 #include <stdio.h>
 
-#include "msgq.hpp"
+#include "services.h"
+
+#include "cereal/messaging/msgq.hpp"
 
 void sigusr2_handler(int signal) {
   assert(signal == SIGUSR2);

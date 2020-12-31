@@ -4,8 +4,8 @@
 #include <thread>
 #include <cassert>
 
-#include "messaging.hpp"
-#include "impl_zmq.hpp"
+#include "cereal/messaging/messaging.hpp"
+#include "cereal/messaging/impl_zmq.hpp"
 
 #define MSGS 1e5
 

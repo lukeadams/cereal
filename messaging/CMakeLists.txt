@@ -2,25 +2,26 @@
 
 # Main cereal messaging library
 add_library(cereal-messaging
+    "include/cereal/messaging/impl_msgq.hpp"
+    "include/cereal/messaging/impl_zmq.hpp"
+    "include/cereal/messaging/messaging.hpp"
+    "include/cereal/messaging/msgq.hpp"
+
     messaging.cc
-    messaging.hpp
     impl_zmq.cc
     impl_msgq.cc
     msgq.cc
     socketmaster.cc)
 target_link_libraries(cereal-messaging cereal-objects cereal-services)
-target_include_directories(cereal-messaging PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(cereal-messaging PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Cereal messaging bridge
-find_package(ZeroMQ REQUIRED)
 add_executable(cereal-messaging-bridge
     bridge.cc
 )
 target_link_libraries(cereal-messaging-bridge cereal-messaging libzmq)
 
 # Cereal cython code
-find_package (Python COMPONENTS Interpreter Development REQUIRED) 
-find_package(Cython REQUIRED)
 add_cython_target(cereal-messaging-pyx
     messaging_pyx.pyx CXX PY3
 )

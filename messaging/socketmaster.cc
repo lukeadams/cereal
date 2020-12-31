@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <time.h>
-#include "messaging.hpp"
+#include "cereal/messaging/messaging.hpp"
 #include "services.h"
 
 static inline uint64_t nanos_since_boot() {

@@ -6,7 +6,7 @@ find_package(CapnProto)
 capnp_generate_cpp(CAPNP_SRCS CAPNP_HDRS car.capnp log.capnp)
 add_library(cereal-objects ${CAPNP_SRCS} ${CAPNP_HDRS})
 target_link_libraries(cereal-objects PRIVATE CapnProto::capnp)
-target_include_directories(cereal-objects PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(cereal-objects PUBLIC ${PROJECT_BINARY_DIR})
 
 # Generate service header
 add_custom_command(OUTPUT services.h

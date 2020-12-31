@@ -7,7 +7,7 @@
 #include <zmq.h>
 
 #include "services.h"
-#include "impl_zmq.hpp"
+#include "cereal/messaging/impl_zmq.hpp"
 
 static int get_port(std::string endpoint) {
   int port = -1;

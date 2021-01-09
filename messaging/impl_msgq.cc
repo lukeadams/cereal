@@ -5,6 +5,7 @@
 #include <csignal>
 #include <cerrno>
 
+#include "services.h"
 
 #include "cereal/messaging/impl_msgq.hpp"
 

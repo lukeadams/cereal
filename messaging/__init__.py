@@ -1,3 +1,6 @@
+from pkgutil import extend_path
+__path__ = extend_path(__path__, __name__)
+
 # must be build with scons
 from .messaging_pyx import Context, Poller, SubSocket, PubSocket  # pylint: disable=no-name-in-module, import-error
 from .messaging_pyx import MultiplePublishersError, MessagingError  # pylint: disable=no-name-in-module, import-error

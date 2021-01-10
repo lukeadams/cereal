@@ -5,9 +5,9 @@
 #include <atomic>
 #include <map>
 
-#include "messaging.hpp"
-#include "visionipc.h"
-#include "visionbuf.h"
+#include "cereal/messaging/messaging.hpp"
+#include "cereal/visionipc/visionipc.h"
+#include "cereal/visionipc/visionbuf.h"
 
 std::string get_endpoint_name(std::string name, VisionStreamType type);
 

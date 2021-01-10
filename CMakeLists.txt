@@ -20,3 +20,4 @@ add_dependencies(cereal-services cereal-services-file) # Depend on the file targ
 target_include_directories(cereal-services INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(messaging)
+add_subdirectory(visionipc)

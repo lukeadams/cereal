@@ -13,7 +13,7 @@
 
 #include <msm_ion.h>
 
-#include "visionbuf.h"
+#include "cereal/visionipc/visionbuf.h"
 
 
 // just hard-code these for convenience

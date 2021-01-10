@@ -3,9 +3,9 @@
 #include <string>
 #include <unistd.h>
 
-#include "messaging.hpp"
-#include "visionipc.h"
-#include "visionbuf.h"
+#include "cereal/messaging/messaging.hpp"
+#include "cereal/visionipc/visionipc.h"
+#include "cereal/visionipc/visionbuf.h"
 
 class VisionIpcClient {
 private:

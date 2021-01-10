@@ -3,9 +3,9 @@
 #include <iostream>
 #include <thread>
 
-#include "ipc.h"
-#include "visionipc_client.h"
-#include "visionipc_server.h"
+#include "cereal/visionipc/ipc.h"
+#include "cereal/visionipc/visionipc_client.h"
+#include "cereal/visionipc/visionipc_server.h"
 
 VisionIpcClient::VisionIpcClient(std::string name, VisionStreamType type, bool conflate, cl_device_id device_id, cl_context ctx) : name(name), type(type), device_id(device_id), ctx(ctx) {
   msg_ctx = Context::create();
